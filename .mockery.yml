@@ -1,0 +1,18 @@
+all: false
+dir: '{{.InterfaceDir}}/mocks'
+filename: mock_{{.InterfaceName}}.go
+force-file-write: false
+formatter: goimports
+log-level: info
+generate: true
+include-auto-generated: false
+structname: '{{.Mock}}{{.InterfaceName}}'
+pkgname: '{{.SrcPackageName}}'
+recursive: false
+require-template-schema-exists: true
+template: testify
+template-schema: '{{.Template}}.schema.json'
+packages:
+  github.com/jaam8/pkg/txman:
+    config:
+      all: true
