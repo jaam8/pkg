@@ -12,7 +12,7 @@ type Config struct {
 	Host     string `yaml:"host" env:"HOST" validate:"required,ip|hostname"`
 	Port     uint16 `yaml:"port" env:"PORT" validate:"required,port"`
 	User     string `yaml:"user" env:"USER" validate:"required"`
-	Password string `yaml:"password" env:"PASSWORD" validate:"required,min=4,max=32"`
+	Password string `yaml:"password" env:"PASSWORD" validate:"required,min=4,max=128"`
 	Database string `yaml:"db" env:"DB" validate:"required"`
 	SSL      string `yaml:"ssl" env:"SSL" validate:"required,oneof=enable disable"`
 	MaxConns int32  `yaml:"max_conns" env:"MAX_CONNS" validate:"required,min=1"`
