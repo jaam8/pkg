@@ -41,7 +41,7 @@ func New(ctx context.Context, opts ...Option) (context.Context, error) {
 		return nil, err
 	}
 
-	ctx = context.WithValue(ctx, loggerKey{}, Logger{l: l})
+	ctx = context.WithValue(ctx, loggerKey{}, &Logger{l: l})
 
 	return ctx, nil
 }
